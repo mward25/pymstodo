@@ -121,7 +121,7 @@ class TaskList:
 
 
 @dataclasses.dataclass
-class Task(dict):
+class Task():
     '''**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed'''
 
     task_id: str
@@ -234,6 +234,24 @@ class Task(dict):
     def task_status(self) -> TaskStatus:
         '''Indicates the state or progress of the task'''
         return TaskStatus(self.status)
+    
+    def __getitem__(self, key):
+        if key == 'body_text':
+           return self.body_text 
+        elif key == 'task_id'
+            return self.task_id
+        elif 'completed_date':
+            return self.completed_date
+        elif 'created_date':
+            self.created_datea
+        elif 'due_date':
+            return self.due_date
+        elif 'last_mod_date':
+            return self.last_mod_date
+        elif 'reminder_date':
+            return self.reminder_date
+        elif 'start_date':
+            return self.start_date
 
 
 class ToDoConnection:
