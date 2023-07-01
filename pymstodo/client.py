@@ -238,7 +238,7 @@ class Task():
     def __getitem__(self, key):
         if key == 'body_text':
            return self.body_text 
-        elif key == 'task_id'
+        elif key == 'task_id':
             return self.task_id
         elif 'completed_date':
             return self.completed_date
