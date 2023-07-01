@@ -121,7 +121,7 @@ class TaskList:
 
 
 @dataclasses.dataclass
-class Task:
+class Task(dict):
     '''**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed'''
 
     task_id: str
