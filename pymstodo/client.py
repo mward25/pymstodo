@@ -167,7 +167,7 @@ class Task(MutableMapping):
 
     def __init__(self, **kwargs: Any) -> None:
         for f in dataclasses.fields(self):
-            setattr(self, f.name, kwargs.get('id' if f.name == 'task_id' else f.name))
+            setattr(self, f.name, kwargs.get('task_id' if f.name == 'task_id' else f.name))
 
     def __str__(self) -> str:
         title = self.title.replace('|', '—').strip()
@@ -266,6 +266,8 @@ class Task(MutableMapping):
             return self.startDateTime
         elif key == 'status':
             return self.status
+        else:
+            return None
         #return self.store[self._keytransform(key)]
 
     def __setitem__(self, key, value):
