@@ -270,31 +270,31 @@ class Task(MutableMapping):
 
     def __setitem__(self, key, value):
         if key == 'task_id':
-            task_id = value
+            self.task_id = value
         elif key == 'body':
-            body = value
+            self.body = value
         elif key == 'categories':
-            categories = value
+            self.categories = value
         elif key == 'completedDateTime':
-            completedDateTime = value
+            self.completedDateTime = value
         elif key == 'createdDateTime':
-            createdDateTime = value
+            self.createdDateTime = value
         elif key == 'dueDateTime':
-            dueDateTime = value
+            self.dueDateTime = value
         elif key == 'hasAttachments':
-            hasAttachments = value
+            self.hasAttachments = value
         elif key == 'title':
-            title = value
+            self.title = value
         elif key == 'importance':
-            importance = value
+            self.importance = value
         elif key == 'isReminderOn':
-            isReminderOn = value
+            self.isReminderOn = value
         elif key == 'lastModifiedDateTime':
-            lastModifiedDateTime = value
+            self.lastModifiedDateTime = value
         elif key == 'reminderDateTime':
-            reminderDateTime = value
+            self.reminderDateTime = value
         elif key == 'startDateTime':
-            startDateTime = value
+            self.startDateTime = value
 
     def __delitem__(self, key):
         # Never do anything
