@@ -235,25 +235,25 @@ class Task(TypedDict):
         '''Indicates the state or progress of the task'''
         return TaskStatus(self.status)
     
-    def __getitem__(self, key):
-        if key == 'body_text':
-           return self.body_text 
-        elif key == 'title':
-            return self.title
-        elif key == 'task_id':
-            return self.task_id
-        elif 'completed_date':
-            return self.completed_date
-        elif 'created_date':
-            self.created_datea
-        elif 'due_date':
-            return self.due_date
-        elif 'last_mod_date':
-            return self.last_mod_date
-        elif 'reminder_date':
-            return self.reminder_date
-        elif 'start_date':
-            return self.start_date
+    #def __getitem__(self, key):
+    #    if key == 'body_text':
+    #       return self.body_text 
+    #    elif key == 'title':
+    #        return self.title
+    #    elif key == 'task_id':
+    #        return self.task_id
+    #    elif 'completed_date':
+    #        return self.completed_date
+    #    elif 'created_date':
+    #        self.created_datea
+    #    elif 'due_date':
+    #        return self.due_date
+    #    elif 'last_mod_date':
+    #        return self.last_mod_date
+    #    elif 'reminder_date':
+    #        return self.reminder_date
+    #    elif 'start_date':
+    #        return self.start_date
 
 
 class ToDoConnection:
