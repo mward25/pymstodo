@@ -123,7 +123,7 @@ class TaskList:
 task_size = 13
 
 @dataclasses.dataclass
-class Task(MutableMapping):
+class Task(UserDict):
     #**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed#
 
     task_id: str
