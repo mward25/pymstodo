@@ -365,31 +365,31 @@ class TaskIter:
         return self
     def __next__(self):
         if self._current_index == 0:
-            return task_id             
+            return self._task_id             
         elif self._current_index == 1:
-            return body                
+            return self._body                
         elif self._current_index == 2:
-            return categories          
+            return self._categories          
         elif self._current_index == 3:
-            return completedDateTime   
+            return self._completedDateTime   
         elif self._current_index == 4:
-            return createdDateTime     
+            return self._createdDateTime     
         elif self._current_index == 5:
-            return dueDateTime         
+            return self._dueDateTime         
         elif self._current_index == 6:
-            return hasAttachments      
+            return self._hasAttachments      
         elif self._current_index == 7:
-            return title               
+            return self._title               
         elif self._current_index == 8:
-            return importance          
+            return self._importance          
         elif self._current_index == 9:
-            return isReminderOn        
+            return self._isReminderOn        
         elif self._current_index == 10:
-            return lastModifiedDateTime
+            return self._lastModifiedDateTime
         elif self._current_index == 11:
-            return reminderDateTime    
+            return self._reminderDateTime    
         elif self._current_index == 12:
-            return startDateTime       
+            return self._startDateTime       
         else:
             raise StopIteration
         self._current_index += 1
