@@ -124,7 +124,7 @@ class TaskList:
 class Task(TypedDict, total=False):
     '''**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed'''
 
-    task_id: str
+    task_id: str = ""
     '''Unique identifier for the task. By default, this value changes when the item is moved from one list to another'''
 
     body: _Body
