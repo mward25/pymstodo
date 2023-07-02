@@ -364,35 +364,37 @@ class TaskIter:
     def __iter__(self):
         return self
     def __next__(self):
+        returnValue = ''
         if self._current_index == 0:
-            return self._task_id             
+            returnValue =  self._task_id             
         elif self._current_index == 1:
-            return self._body                
+            returnValue =  self._body                
         elif self._current_index == 2:
-            return self._categories          
+            returnValue =  self._categories          
         elif self._current_index == 3:
-            return self._completedDateTime   
+            returnValue =  self._completedDateTime   
         elif self._current_index == 4:
-            return self._createdDateTime     
+            returnValue =  self._createdDateTime     
         elif self._current_index == 5:
-            return self._dueDateTime         
+            returnValue =  self._dueDateTime         
         elif self._current_index == 6:
-            return self._hasAttachments      
+            returnValue =  self._hasAttachments      
         elif self._current_index == 7:
-            return self._title               
+            returnValue =  self._title               
         elif self._current_index == 8:
-            return self._importance          
+            returnValue =  self._importance          
         elif self._current_index == 9:
-            return self._isReminderOn        
+            returnValue =  self._isReminderOn        
         elif self._current_index == 10:
-            return self._lastModifiedDateTime
+            returnValue =  self._lastModifiedDateTime
         elif self._current_index == 11:
-            return self._reminderDateTime    
+            returnValue =  self._reminderDateTime    
         elif self._current_index == 12:
-            return self._startDateTime       
+            returnValue =  self._startDateTime       
         else:
             raise StopIteration
         self._current_index += 1
+        return returnValue
 
     #task_id
     #body
