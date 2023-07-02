@@ -5,7 +5,7 @@ import dataclasses
 from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, List, Literal, Optional, TypedDict, Union
-from collections import UserDict
+from collections.abc import MutableMapping
 
 from requests_oauthlib import OAuth2Session
 
@@ -122,7 +122,7 @@ class TaskList:
 
 
 @dataclasses.dataclass
-class Task(UserDict):
+class Task(MutableMapping):
     #**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed#
 
     task_id: str
@@ -235,6 +235,93 @@ class Task(UserDict):
     def task_status(self) -> TaskStatus:
         '''Indicates the state or progress of the task'''
         return TaskStatus(self.status)
+    
+    def __getitem__(self, key):
+        if key == 'task_id':
+            return task_id
+        elif key == 'body':
+            return body
+        elif key == 'categories':
+            return categories
+        elif key == 'completedDateTime':
+            return completedDateTime
+        elif key == 'createdDateTime':
+            return createdDateTime
+        elif key == 'dueDateTime':
+            return dueDateTime
+        elif key == 'hasAttachments':
+            return hasAttachments
+        elif key == 'title':
+            return title
+        elif key == 'importance':
+            return importance
+        elif key == 'isReminderOn':
+            return isReminderOn
+        elif key == 'lastModifiedDateTime':
+            return lastModifiedDateTime
+        elif key == 'reminderDateTime':
+            return reminderDateTime
+        elif key == 'startDateTime':
+            return startDateTime
+        elif key == 'status':
+            return status
+        #return self.store[self._keytransform(key)]
+
+    def __setitem__(self, key, value):
+        if key == 'task_id':
+            task_id = value
+        elif key == 'body':
+            body = value
+        elif key == 'categories':
+            categories = value
+        elif key == 'completedDateTime':
+            completedDateTime = value
+        elif key == 'createdDateTime':
+            createdDateTime = value
+        elif key == 'dueDateTime':
+            dueDateTime = value
+        elif key == 'hasAttachments':
+            hasAttachments = value
+        elif key == 'title':
+            title = value
+        elif key == 'importance':
+            importance = value
+        elif key == 'isReminderOn':
+            isReminderOn = value
+        elif key == 'lastModifiedDateTime':
+            lastModifiedDateTime = value
+        elif key == 'reminderDateTime':
+            reminderDateTime = value
+        elif key == 'startDateTime':
+            startDateTime = value
+
+    def __delitem__(self, key):
+        # Never do anything
+        pass
+    #task_id
+    #body
+    #categories
+    #completedDateTime
+    #createdDateTime
+    #dueDateTime
+    #hasAttachments
+    #title
+    #importance
+    #isReminderOn
+    #lastModifiedDateTime
+    #reminderDateTime
+    #startDateTime
+
+    def __iter__(self):
+        pass
+        #return iter(self.store)
+
+    def __len__(self):
+        return 13
+
+    def _keytransform(self, key):
+        return key
+
     
     #def __getitem__(self, key):
     #    if key == 'body_text':
