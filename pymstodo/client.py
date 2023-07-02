@@ -121,47 +121,49 @@ class TaskList:
 
 
 @dataclasses.dataclass
-class Task(TypedDict, total=False):
-    '''**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed'''
+class Task(dict):
+    FIELDS = {
+        #**To-Do task** represents a task, such as a piece of work or personal item, that can be tracked and completed#
 
-    task_id: str = ""
-    '''Unique identifier for the task. By default, this value changes when the item is moved from one list to another'''
+        'task_id': str
+        #Unique identifier for the task. By default, this value changes when the item is moved from one list to another#
 
-    body: _Body
+        'body': _Body
 
-    categories: list[str]
-    '''The categories associated with the task'''
+        'categories': list[str]
+        #The categories associated with the task#
 
-    completedDateTime: str
-    '''The date and time in the specified time zone that the task was finished. It is in UTC and uses ISO 8601 format'''
+        'completedDateTime': str
+        #The date and time in the specified time zone that the task was finished. It is in UTC and uses ISO 8601 format#
 
-    createdDateTime: str
-    '''The date and time when the task was created. It is in UTC and uses ISO 8601 format'''
+        'createdDateTime': str
+        #The date and time when the task was created. It is in UTC and uses ISO 8601 format#
 
-    dueDateTime: _DueDate
+        'dueDateTime': _DueDate
 
-    hasAttachments: bool
-    '''Indicates whether the task has attachments'''
+        'hasAttachments': bool
+        #Indicates whether the task has attachments#
 
-    title: str
-    '''A brief description of the task'''
+        'title': str
+        #A brief description of the task#
 
-    importance: Literal['low', 'normal', 'high']
-    '''The importance of the task. Possible values are: `low`, `normal`, `high`'''
+        'importance': Literal['low', 'normal', 'high']
+        #The importance of the task. Possible values are: `low`, `normal`, `high`#
 
-    isReminderOn: bool
-    '''Set to true if an alert is set to remind the user of the task'''
+        'isReminderOn': bool
+        #Set to true if an alert is set to remind the user of the task#
 
-    lastModifiedDateTime: str
-    '''The date and time when the task was last modified. It is in UTC and uses ISO 8601 format'''
+        'lastModifiedDateTime': str
+        #The date and time when the task was last modified. It is in UTC and uses ISO 8601 format#
 
-    reminderDateTime: str
-    '''The date and time in the specified time zone for a reminder alert of the task to occur. Uses ISO 8601 format'''
+        'reminderDateTime': str
+        #The date and time in the specified time zone for a reminder alert of the task to occur. Uses ISO 8601 format#
 
-    startDateTime: str
-    '''The date and time in the specified time zone at which the task is scheduled to start. Uses ISO 8601 format'''
+        'startDateTime': str
+        #The date and time in the specified time zone at which the task is scheduled to start. Uses ISO 8601 format#
 
-    status: str
+        'status': str
+    }
 
     def __init__(self, **kwargs: Any) -> None:
         for f in dataclasses.fields(self):
