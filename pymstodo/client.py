@@ -6,6 +6,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Any, Dict, List, Literal, Optional, TypedDict, Union
 from collections.abc import MutableMapping
+from collections import UserDict
 
 from requests_oauthlib import OAuth2Session
 
