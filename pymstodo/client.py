@@ -346,7 +346,7 @@ class Task(MutableMapping):
 
 
 class TaskIter:
-    def __init(self, Task):
+    def __init__(self, Task):
         self._task_id                   =  task_id             
         self._body                      =  body                
         self._categories                =  categories          
