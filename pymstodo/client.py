@@ -239,33 +239,33 @@ class Task(MutableMapping):
     
     def __getitem__(self, key):
         if key == 'task_id':
-            return task_id
+            return self.task_id
         elif key == 'body':
-            return body
+            return self.body
         elif key == 'categories':
-            return categories
+            return self.categories
         elif key == 'completedDateTime':
-            return completedDateTime
+            return self.completedDateTime
         elif key == 'createdDateTime':
-            return createdDateTime
+            return self.createdDateTime
         elif key == 'dueDateTime':
-            return dueDateTime
+            return self.dueDateTime
         elif key == 'hasAttachments':
-            return hasAttachments
+            return self.hasAttachments
         elif key == 'title':
-            return title
+            return self.title
         elif key == 'importance':
-            return importance
+            return self.importance
         elif key == 'isReminderOn':
-            return isReminderOn
+            return self.isReminderOn
         elif key == 'lastModifiedDateTime':
-            return lastModifiedDateTime
+            return self.lastModifiedDateTime
         elif key == 'reminderDateTime':
-            return reminderDateTime
+            return self.reminderDateTime
         elif key == 'startDateTime':
-            return startDateTime
+            return self.startDateTime
         elif key == 'status':
-            return status
+            return self.status
         #return self.store[self._keytransform(key)]
 
     def __setitem__(self, key, value):
