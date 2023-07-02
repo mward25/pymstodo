@@ -346,20 +346,20 @@ class Task(MutableMapping):
 
 
 class TaskIter:
-    def __init__(self, Task):
-        self._task_id                   =  task_id             
-        self._body                      =  body                
-        self._categories                =  categories          
-        self._completedDateTime         =  completedDateTime   
-        self._createdDateTime           =  createdDateTime     
-        self._dueDateTime               =  dueDateTime         
-        self._hasAttachments            =  hasAttachments      
-        self._title                     =  title               
-        self._importance                =  importance          
-        self._isReminderOn              =  isReminderOn        
-        self._lastModifiedDateTime      =  lastModifiedDateTime
-        self._reminderDateTime          =  reminderDateTime    
-        self._startDateTime             =  startDateTime       
+    def __init__(self, input_task : Task):
+        self._task_id                   =  input_task.task_id             
+        self._body                      =  input_task.body                
+        self._categories                =  input_task.categories          
+        self._completedDateTime         =  input_task.completedDateTime   
+        self._createdDateTime           =  input_task.createdDateTime     
+        self._dueDateTime               =  input_task.dueDateTime         
+        self._hasAttachments            =  input_task.hasAttachments      
+        self._title                     =  input_task.title               
+        self._importance                =  input_task.importance          
+        self._isReminderOn              =  input_task.isReminderOn        
+        self._lastModifiedDateTime      =  input_task.lastModifiedDateTime
+        self._reminderDateTime          =  input_task.reminderDateTime    
+        self._startDateTime             =  input_task.startDateTime       
         self._current_index = 0
     def __iter__(self):
         return self
