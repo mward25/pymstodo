@@ -120,6 +120,7 @@ class TaskList:
         '''Property indicating the list name if the given list is a well-known list'''
         return None if self.wellknownListName == 'none' else WellknownListName(self.wellknownListName)
 
+task_size = 13
 
 @dataclasses.dataclass
 class Task(MutableMapping):
@@ -313,11 +314,11 @@ class Task(MutableMapping):
     #startDateTime
 
     def __iter__(self):
-        pass
+        return TaskIter(self)
         #return iter(self.store)
 
     def __len__(self):
-        return 13
+        return task_size
 
     def _keytransform(self, key):
         return key
@@ -344,6 +345,69 @@ class Task(MutableMapping):
     #        return self.start_date
 
 
+class TaskIter:
+    def __init(self, Task):
+        self._task_id                   =  task_id             
+        self._body                      =  body                
+        self._categories                =  categories          
+        self._completedDateTime         =  completedDateTime   
+        self._createdDateTime           =  createdDateTime     
+        self._dueDateTime               =  dueDateTime         
+        self._hasAttachments            =  hasAttachments      
+        self._title                     =  title               
+        self._importance                =  importance          
+        self._isReminderOn              =  isReminderOn        
+        self._lastModifiedDateTime      =  lastModifiedDateTime
+        self._reminderDateTime          =  reminderDateTime    
+        self._startDateTime             =  startDateTime       
+        self._current_index = 0
+    def __iter__(self):
+        return self
+    def __next__(self):
+        if self._current_index == 0:
+            return task_id             
+        elif self._current_index == 1:
+            return body                
+        elif self._current_index == 2:
+            return categories          
+        elif self._current_index == 3:
+            return completedDateTime   
+        elif self._current_index == 4:
+            return createdDateTime     
+        elif self._current_index == 5:
+            return dueDateTime         
+        elif self._current_index == 6:
+            return hasAttachments      
+        elif self._current_index == 7:
+            return title               
+        elif self._current_index == 8:
+            return importance          
+        elif self._current_index == 9:
+            return isReminderOn        
+        elif self._current_index == 10:
+            return lastModifiedDateTime
+        elif self._current_index == 11:
+            return reminderDateTime    
+        elif self._current_index == 12:
+            return startDateTime       
+        else:
+            raise StopIteration
+        self._current_index += 1
+
+    #task_id
+    #body
+    #categories
+    #completedDateTime
+    #createdDateTime
+    #dueDateTime
+    #hasAttachments
+    #title
+    #importance
+    #isReminderOn
+    #lastModifiedDateTime
+    #reminderDateTime
+    #startDateTime
+        
 class ToDoConnection:
     '''**To-Do connection** is your entry point to the To-Do API
 
